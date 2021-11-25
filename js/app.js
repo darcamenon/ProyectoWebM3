@@ -10,13 +10,12 @@ const tallas = document.querySelector('.tallas');
 const precio = document.querySelector('.precio');
 console.log(filtroDesplegableColores);
 
+
 filtro.addEventListener('click', () => {
   listaFiltro.classList.toggle('liDinamico');
   filtro.classList.toggle('rotacion');
 })
-reiniciar.addEventListener('click', () => {
-  document.location.reload();
-})
+
 
 
 filtroDesplegableColores.addEventListener('click', () => {
@@ -33,4 +32,13 @@ filtroDesplegableTallas.addEventListener('click', () => {
 })
 filtroDesplegablePrecio.addEventListener('click', () => {
   precio.classList.toggle('liDinamicoColores');
+})
+
+
+/***********  Agregar productos al carrito ***********/
+
+const producto = document.querySelector('.card');
+console.log(producto);
+producto.addEventListener('submit', () => {
+  console.log(producto);
 })
