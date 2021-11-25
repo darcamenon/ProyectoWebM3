@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  transition: all .3s ease-in-out;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --principal: rgb(71, 212, 212);
+}
+
+body {
+  /* font-family: 'Open Sans', sans-serif; */
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style: none;
+}
+
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
+h3 {
+  opacity: 0.5;
+}
+
+.slogan {
+  display: flex;
+  justify-content: start;
+  margin-left: 20%;
+
+  color: #000;
+}
+
+.slogan h1 {
+  margin-right: 10px;
+  color: var(--principal);
+  font-size: 2.6rem;
+}
+
+.slogan span {
+  padding-top: 48px;
+  font-size: 0.6rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.slogan span:before {
+  content: "";
+  position: absolute;
+  left: start;
+  transform: translateX(-4px);
+  top: 45px;
+  width: 1.5px;
+  height: 32px;
+  background: #000;
+}
+
+hr {
+  height: 1.5px;
+  width: 90%;
+  background: #222;
+  opacity: 0.4;
+}
+
+.carrito {
+  position: absolute;
+  top: 48px;
+  right: 20%;
+}
+
+.carrito .fa-shopping-bag {
+  font-size: 1.6rem;
+}
+
+
+.title {
+  margin-left: 20%;
+  width: 20%;
+}
+
+.colores {
+  margin-left: 20%;
+  width: 20%;
+}
+
+/* .colores h3 .ocultarColores {
+  transition: all 0.5s ease-in-out;
+} */
+
+.center {
+  margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  -webkit-appearance: none;
+  outline: none;
+  margin: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px outset #000;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+input:checked[type="checkbox"]:before {
+  background: var(--principal);
+}
+
+.center label {
+  text-transform: capitalize;
+  font-size: 1.2;
+  cursor: pointer;
+}
+
+.fa-angle-down {
+  margin-left: 10px;
+  text-align: center;
+}
+
+.todosColores {
+  box-sizing: border-box;
+  opacity: 0.7;
+  width: 200px;
+  border-bottom: 1px solid #222;
+}
+
+/********************* Tallas **********************/
+
+.tallas {
+  display: grid;
+  grid-template-columns: repeat(4, 65px);
+}
+
+.tallas .caja {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 40px;
+  padding: 5px;
+  margin: 5px;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+.tallas .caja:hover {
+  border: 1px solid var(--principal);
+  cursor: pointer;
+  opacity: 1;
+}
+
+/*********** FILTRO **************/
+.filtro {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  z-index: 10000;
+
+  margin: 0;
+  padding: 0;
+}
+
+.filtro h3 {
+  padding: 2px 5px;
+  cursor: pointer;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.filtro h3 i {
+  margin: 0 5px 0 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.rotacion {
+  transform: rotate(180deg);
+}
+
+.filtro ul {
+  padding: 0;
+  background: #fff;
+  margin: 0;
+  transition: 0.5s;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-top: transparent;
+  transition: 0.3s;
+}
+
+.filtro ul li {
+  padding: 6px;
+  text-transform: capitalize;
+}
+
+.filtro ul li:hover {
+  background: var(--principal);
+  cursor: pointer;
+}
+
+.liDinamico {
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ocultarDisplay {
+  display: none;
+}
+
+/* .liDinamicoColoresEntrada {
+
+  transform: translateX(20px);
+  opacity: 1;
+  visibility: hidden;
+} */
+
+.liDinamicoColores {
+  /* display: none; */
+
+  transform: translateX(-20px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.opcionFiltrar {
+  display: none;
+}
+
+
+
+
+
+/***********RESPONSIVE*****************/
+
+@media (max-width: 992px) {
+
+  /* .contenedorImagenes {
+      display: none;
+   } */
+
+
+  .filtrarOrdenar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10px;
+
+  }
+
+  .filtrarOrdenar h3 {
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 15px;
+  }
+
+  .title {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+
+  h2 {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .filtro {
+    display: none;
+  }
+
+  .todosColores {
+    display: none;
+  }
+
+  /*************Desplegable Filtros *******************/
+  .plus {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    position: relative;
+    margin-left: 55px;
+    cursor: pointer;
+
+  }
+
+  .plus::before,
+  .plus::after {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    left: 50%;
+    top: 50%;
+    background-color: #000000;
+    height: 2px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+  }
+
+  .plus:hover:after {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  .colores {
+    width: 100%;
+  }
+
+  .negro {
+    opacity: 1;
+    color: #000;
+  }
+
+  /* h3 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+   } */
+  .cargar {
+    /* margin: 0; */
+    /* width: 200px; */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .filtrosCompras {}
+
+  .opcionFiltrar {
+    display: unset;
+
+  }
+
+  .opcionFiltrar h3 {
+    margin-left: 20%;
+    width: 20%;
+
+  }
+
+
+
+  .iconoClose i {
+    position: absolute;
+    top: 21.1%;
+    left: 85%;
+    font-size: 1.6rem;
+  }
+
+  .btnAplicarLimpar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+
+
+  }
+
+  .cargar {
+    /* margin: 150px; */
+
+    text-transform: uppercase;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+  }
+
+  .cargar:hover {
+    background: var(--principal);
+    color: #fff;
+    border: none;
+  }
+
+
+}
